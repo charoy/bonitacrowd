@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.IOException;
 
+import bonita.*;
+import bonita.Process;
 import org.bonitasoft.engine.bpm.document.DocumentAttachmentException;
 import org.bonitasoft.engine.bpm.flownode.FlowNodeExecutionException;
 import org.bonitasoft.engine.bpm.process.ProcessInstanceNotFoundException;
@@ -17,24 +19,18 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
-import bonita.Assessment;
-import bonita.Collect;
-import bonita.Select;
-import bonita.Task;
-import bonita.process;
-
 
 public class tweet {
 
 	/**
 	 * @param args
 	 */
-	static process pr;
+	static Process pr;
 	static Task task;
 	public static void main(String[] args) throws BonitaHomeNotSetException, ServerAPIException, UnknownAPITypeException, LoginException, DocumentAttachmentException, FlowNodeExecutionException, ProcessInstanceNotFoundException, UpdateException, IOException {
 		// TODO Auto-generated method stub
 		
-		pr = process.getInstance();
+		pr = bonita.Process.getInstance();
 		System.out.println("Setting properties");
 		pr.set(args[0]);
 		System.out.println("Connecting");

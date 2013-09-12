@@ -1,10 +1,9 @@
 package models;
 
+import bonita.*;
 import org.bonitasoft.engine.exception.UpdateException;
 
 import graphic.WaitTask;
-import bonita.Task;
-import bonita.process;
 
 
 public class WaitTaskModel {
@@ -31,7 +30,7 @@ public class WaitTaskModel {
 	}
 	public Task takeNextTask() throws UpdateException {
 		// TODO Auto-generated method stub
-		Task tsk = process.getInstance().getNextTask();
+		Task tsk = bonita.Process.getInstance().getNextTask();
 		tsk.takeTask();
 		return tsk;
 	}

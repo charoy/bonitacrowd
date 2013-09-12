@@ -1,19 +1,12 @@
 package models;
+import bonita.*;
+import bonita.Process;
 import graphic.Collection;
 import graphic.Fenetre;
 import graphic.Selection;
 import graphic.WaitTask;
 
-import java.awt.Dimension;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
 
 import javax.swing.JScrollPane;
 import javax.swing.UIManager;
@@ -26,15 +19,10 @@ import org.bonitasoft.engine.exception.UnknownAPITypeException;
 import org.bonitasoft.engine.exception.UpdateException;
 import org.bonitasoft.engine.platform.LoginException;
 
-import bonita.Collect;
-import bonita.Select;
-import bonita.Task;
-import bonita.process;
-
 
 public class Main {
 	static Fenetre fen;
-	process pr;
+	Process pr;
 	static Main main ;
 	public Main(String [] args) throws BonitaHomeNotSetException, ServerAPIException, UnknownAPITypeException{
 		 try {
@@ -44,7 +32,7 @@ public class Main {
 		fen = new Fenetre();
 		
 		try {
-			pr = process.getInstance();
+			pr = bonita.Process.getInstance();
 			pr.set(args[0]);
 			pr.connect(args[1], args[2]);
 			

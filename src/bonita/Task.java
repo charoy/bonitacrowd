@@ -29,7 +29,7 @@ public abstract class Task {
 		arguments.put(key, value);
 	}
 	public void takeTask() throws UpdateException{
-		process.getInstance().getProcessAPI().assignUserTask(this.ID, idUser);
+		Process.getInstance().getProcessAPI().assignUserTask(this.ID, idUser);
 		
 	}
 	public boolean executeTask(){
@@ -40,7 +40,7 @@ public abstract class Task {
 		for (int i =0; i<keys.length; i++){
 
 			try {
-				process.getInstance().getProcessAPI().updateActivityDataInstance(keys[i].toString(),ID, arguments.get(keys[i].toString()));
+				Process.getInstance().getProcessAPI().updateActivityDataInstance(keys[i].toString(),ID, arguments.get(keys[i].toString()));
 				
 			} catch (UpdateException e) {
 				// TODO Auto-generated catch block
@@ -49,7 +49,7 @@ public abstract class Task {
 			
 		}
 		try {
-			process.getInstance().getProcessAPI().executeFlowNode(ID);
+			Process.getInstance().getProcessAPI().executeFlowNode(ID);
 			
 		} catch (FlowNodeExecutionException e) {
 			// TODO Auto-generated catch block

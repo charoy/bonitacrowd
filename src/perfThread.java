@@ -1,21 +1,16 @@
 import java.io.File;
 import java.io.IOException;
 
+import bonita.*;
 import org.bonitasoft.engine.bpm.document.DocumentAttachmentException;
 import org.bonitasoft.engine.bpm.flownode.FlowNodeExecutionException;
 import org.bonitasoft.engine.bpm.process.ProcessInstanceNotFoundException;
 import org.bonitasoft.engine.exception.UpdateException;
 
-import bonita.Assessment;
-import bonita.Collect;
-import bonita.Select;
-import bonita.Task;
-import bonita.process;
-
 
 public class perfThread extends Thread {
 	Task tsk;
-	public perfThread(process pr){
+	public perfThread(bonita.Process pr){
 		this.tsk =  pr.getNextTask();;
 	}
 	public void run(){

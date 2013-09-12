@@ -1,10 +1,8 @@
 package models;
 
-import org.bonitasoft.engine.exception.UpdateException;
+import bonita.*;
 
 import graphic.WaitTask;
-import bonita.Task;
-import bonita.process;
 
 public class ThreadWaitTask extends Thread {
 	
@@ -19,7 +17,7 @@ public class ThreadWaitTask extends Thread {
 	}
 	public void run() {
 		while(true){
-			next = process.getInstance().getNextTask();
+			next = bonita.Process.getInstance().getNextTask();
 		
 			if(wt!=null){
 				if(next !=null){

@@ -14,12 +14,12 @@ import org.bonitasoft.engine.platform.LoginException;
 import org.bonitasoft.engine.session.APISession;
 
 
-public class process {
+public class Process {
 	ProcessAPI processAPI;
 	APISession session;
 	LoginAPI loginAPI;
-	private static process INSTANCE = null;
-	private process() {
+	private static Process INSTANCE = null;
+	private Process() {
 	
 	}
 
@@ -42,14 +42,14 @@ public class process {
 		// log in to the tenant to create a session
 	}
 
-	public static process getInstance() 
+	public static Process getInstance()
 	{	
 		if (INSTANCE == null)
 		{
-			synchronized(process.class)
+			synchronized(Process.class)
 			{
 				if (INSTANCE == null)
-				{	INSTANCE = new process();
+				{	INSTANCE = new Process();
 				}
 			}
 		}

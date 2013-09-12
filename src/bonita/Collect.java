@@ -31,12 +31,12 @@ public class Collect extends Task{
 		
 
 		try {
-			process.getInstance().getProcessAPI().attachNewDocumentVersion(process.getInstance().getProcessAPI().getProcessInstanceIdFromActivityInstanceId(ID), "image",picture.getName(), new MimetypesFileTypeMap().getContentType(picture),FileBytes);
+			Process.getInstance().getProcessAPI().attachNewDocumentVersion(Process.getInstance().getProcessAPI().getProcessInstanceIdFromActivityInstanceId(ID), "image",picture.getName(), new MimetypesFileTypeMap().getContentType(picture),FileBytes);
 		} catch (DocumentAttachmentException e) {
 			// TODO Auto-generated catch block
 			
 			try {
-				process.getInstance().getProcessAPI().attachDocument(process.getInstance().getProcessAPI().getProcessInstanceIdFromActivityInstanceId(ID), "image",picture.getName(), new MimetypesFileTypeMap().getContentType(picture),FileBytes);
+				Process.getInstance().getProcessAPI().attachDocument(Process.getInstance().getProcessAPI().getProcessInstanceIdFromActivityInstanceId(ID), "image",picture.getName(), new MimetypesFileTypeMap().getContentType(picture),FileBytes);
 			} catch (DocumentAttachmentException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

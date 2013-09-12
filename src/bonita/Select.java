@@ -24,7 +24,7 @@ public class Select extends Task{
 	}
 	public void updateRoadsToSelect(){
 		//Will return a table of string containing file's id and urls
-		java.util.List<DataInstance> bla = process.getInstance().getProcessAPI().getActivityDataInstances(this.ID, 0, 20);
+		java.util.List<DataInstance> bla = Process.getInstance().getProcessAPI().getActivityDataInstances(this.ID, 0, 20);
 		roads = new HashMap<String, ArrayList<String>>();
 		for (int i =0; i< bla.size(); i++){
 			if(bla.get(i).getValue()!=null)

@@ -19,7 +19,7 @@ public class Assessment extends Task {
 	}
 	@SuppressWarnings("unchecked")
 	public void updatePictureToAssess(){
-		java.util.List<DataInstance> bla = process.getInstance().getProcessAPI().getActivityDataInstances(this.ID, 0, 20);
+		java.util.List<DataInstance> bla = Process.getInstance().getProcessAPI().getActivityDataInstances(this.ID, 0, 20);
 		pictureToAssess = ((ArrayList<String>) bla.get(0).getValue()).get(1);
 		((ArrayList<String>) bla.get(0).getValue()).get(0);
 		System.out.println(pictureToAssess);

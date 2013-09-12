@@ -1,5 +1,8 @@
 import java.io.File;
 import java.io.IOException;
+
+import bonita.*;
+import bonita.Process;
 import org.bonitasoft.engine.exception.BonitaHomeNotSetException;
 import org.bonitasoft.engine.exception.ServerAPIException;
 import org.bonitasoft.engine.exception.UnknownAPITypeException;
@@ -8,13 +11,9 @@ import org.bonitasoft.engine.platform.LoginException;
 import org.bonitasoft.engine.bpm.document.DocumentAttachmentException;
 import org.bonitasoft.engine.bpm.flownode.FlowNodeExecutionException;
 import org.bonitasoft.engine.bpm.process.ProcessInstanceNotFoundException;
-import bonita.Assessment;
-import bonita.Collect;
-import bonita.Select;
-import bonita.Task;
-import bonita.process;
+
 public class perf {
-	static process pr;
+	static Process pr;
 	static Task task;
 	public static String [] listerRepertoire(File repertoire){
 		String [] listefichiers=repertoire.list();	
@@ -24,7 +23,7 @@ public class perf {
 	public static void main(String[] args) throws BonitaHomeNotSetException, ServerAPIException, UnknownAPITypeException, LoginException, DocumentAttachmentException {
 		// TODO Auto-generated method stub
 
-		pr = process.getInstance();
+		pr = bonita.Process.getInstance();
 		System.out.println("Setting properties");
 		pr.set(args[0]);
 		System.out.println("Connecting");
